@@ -1,20 +1,25 @@
-:root{
+
+body.dark{
+    --top:#27272A;
+    --side:#3F3F46;
+    --hover:#27272A;
+    --back:#1C1917;
+    --color:white;
+}
+
+body{
     --top:coral;
     --side:#CBD5E1;
     --hover:#94A3B8;
     --back:white;
     --color:black;
-}
-
-
-body{
     margin: -.01%;
     display: grid;
-    grid-template-rows: 1fr 6fr;
+    grid-template-rows: 15vh 75vh;
     font-family: 'Ubuntu', sans-serif;
     background-color: var(--back);
     color: var(--color);
-    
+    transition: 1s;
 }
 .header{
    
@@ -35,11 +40,13 @@ body{
 .material-symbols-rounded:hover{
     font-weight: 900;
 }
-
+.sidebar.expand{
+    display: flex;
+}
 .sidebar{
     
     background-color: var(--side); 
-    display: flex;
+    display: none;
     flex-direction: column;
     padding: 3%;
 }
@@ -62,6 +69,7 @@ body{
     font-size: larger;
     border-radius: 5px;
     background-color: var(--side) ;
+    color: var(--color);
 }
 .active{
     background-color: var(--hover);
@@ -77,8 +85,10 @@ body{
     grid-template-rows: 1fr 1fr;
     
     flex-direction: column;
-    
+}
 
+.content{
+    background-color: var(--back);
 }
 
 .mode{
@@ -88,22 +98,69 @@ body{
    bottom: 2%;
    background-color: var(--top);
    color: var(--color);
-   border-radius: 50%;
+   border-radius: 5px;
+   transform: scale(1);
+   transition: 1s;
+}
+.mode:hover{
+  transform: scale(1.1);
+}
+.popUpContainer{
+    position: fixed;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(0, 0, 0, .5);
+    width: 100%;
+    height: 100%;
+    
+}
+.popUp{
+    width: 70%;
+    height: 60%;
+    display: flex;
+    background-color: white;
+    border-radius: 5px;
+    position: relative;
+}
+.cancel{
+    color: var(--top);
+    cursor: pointer;
+    transition: 1s;
+    transform: scale(1);
+    position: absolute;
+    top: 5px;
+    right: 5px;
+}
+.cancel:hover{
+    transform: scale(1.03);
+    
 }
 
 @media(min-width: 600px){
   .main{
     grid-template-columns: 1fr 3fr;
-    grid-template-rows: 1fr;
+    grid-template-rows: 100vh;
   } 
-  
+  .sidebar{
+    display: flex;
+  }
+ .popUp{
+    width: 40%;
+    height: 50%;
+ } 
 .sidebar>*{
     margin: 3%;
     font-size: 1.5rem;
+    
 }
+
 .sidebar>:nth-child(4){font-size: 2rem;}
  .header{
     font-weight: 1000;
+ }
+ .menu{
+    display: none;
  }
 
 }
