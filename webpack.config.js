@@ -8,15 +8,17 @@ module.exports = {
   },
   devtool: 'inline-source-map',
   devServer: {
-
+    
     static: './dist',
 
   },
   plugins: [
 
     new HtmlWebpackPlugin({
-
-        title: 'Output Management',
+        
+        template: './src/user.html',
+        
+        title: 'ToDO list',
 
     }),
 

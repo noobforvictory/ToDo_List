@@ -1,3 +1,109 @@
-h2{
-    color: brown;
+:root{
+    --top:coral;
+    --side:#CBD5E1;
+    --hover:#94A3B8;
+    --back:white;
+    --color:black;
+}
+
+
+body{
+    margin: -.01%;
+    display: grid;
+    grid-template-rows: 1fr 6fr;
+    font-family: 'Ubuntu', sans-serif;
+    background-color: var(--back);
+    color: var(--color);
+    
+}
+.header{
+   
+   background-color: var(--top);
+   display: flex;
+   justify-content: space-between;
+   align-items: center;
+   
+   font-size: 2.5rem;
+}
+.header>*{
+    padding: 2%;
+}
+.material-symbols-rounded{
+    
+    font-size: 2.5rem;
+}
+.material-symbols-rounded:hover{
+    font-weight: 900;
+}
+
+.sidebar{
+    
+    background-color: var(--side); 
+    display: flex;
+    flex-direction: column;
+    padding: 3%;
+}
+.content{
+    display: flex;
+    
+   
+}
+.sidebar>:nth-child(4){
+    padding: 1%;
+    padding-top: 4%;
+    padding-bottom: 4%;
+    font-size: 1.4rem;
+}
+.btn1{
+    display: flex;
+    justify-content: flex-start;
+    border: none;
+    padding: 1%;
+    font-size: larger;
+    border-radius: 5px;
+    background-color: var(--side) ;
+}
+.active{
+    background-color: var(--hover);
+}
+
+
+.btn1:hover{
+    background-color: var(--hover);
+
+}
+.main{
+    display: grid;
+    grid-template-rows: 1fr 1fr;
+    
+    flex-direction: column;
+    
+
+}
+
+.mode{
+   position: fixed;
+   padding: 2px;
+   right: 2%;
+   bottom: 2%;
+   background-color: var(--top);
+   color: var(--color);
+   border-radius: 50%;
+}
+
+@media(min-width: 600px){
+  .main{
+    grid-template-columns: 1fr 3fr;
+    grid-template-rows: 1fr;
+  } 
+  
+.sidebar>*{
+    margin: 3%;
+    font-size: 1.5rem;
+}
+.sidebar>:nth-child(4){font-size: 2rem;}
+ .header{
+    font-weight: 1000;
+ }
+
 }
