@@ -54,6 +54,7 @@ body{
     width: 100vw;
     font-size: .7rem;
     min-height: 8vh;  
+    justify-content: space-around;
 }
 .projects{
     display: flex;
@@ -72,8 +73,7 @@ body{
     flex-wrap: wrap;
     justify-content: center;
     align-items: center;
-    margin-left: 6%;
-    margin-right: 6%;
+    
 }
 
 
@@ -159,6 +159,11 @@ body{
     transform: scale(1.03);
     
 }
+.btn{
+    
+    display: none;
+    
+}
 /* --------------------------------------------content page--------------------------------------------------------------- */
 .home_header,.today_header,.week_header{
     display: flex;
@@ -194,7 +199,7 @@ body{
         padding: 1%;
     }
   .proj_list{
-     display: none;
+     display: flex;
     }
   .header{
     font-size: 2.5rem;
@@ -206,6 +211,15 @@ body{
     height: 100%;
     
   }
+  .btn{
+    display: flex;
+    height: 10%;
+    justify-content: flex-start;
+    padding-left: 2%;
+    font-size: 1.7rem;
+    background-color: var(--side);
+    border-style: none ;
+  }
  .popUp{
     width: 40%;
     height: 50%;
@@ -216,17 +230,20 @@ body{
 
 .sidebar{
     padding-top: 4%;
+    padding-left: 6%;
     position: relative;
     flex-direction: column;
-    font-size: 1rem;
+    font-size: 1.2rem;
     grid-row: 2/3;
     grid-column: 1/2;
     width: 100%;
     min-height: 100%;
+    justify-content: flex-start;
     
 }
 .sidebar>div{
     width: 80%;
+    
     margin-bottom: 4%;
     flex-wrap:nowrap;
     justify-content: flex-start;

@@ -1,7 +1,7 @@
 import './style.css';
 import { home } from './home.js';
 import { today, today_form } from './today.js';
-import { week } from './week.js';
+import { week ,week_form} from './week.js';
 
 
 home();
@@ -29,6 +29,10 @@ document.addEventListener('click',(e)=>{
     if(e.target.getAttribute('class') === 'add_today' ){
         document.querySelector('.popUpContainer').style.display = 'flex';
         today_form();
+    }
+    if(e.target.getAttribute('class') === 'add_week' ){
+        document.querySelector('.popUpContainer').style.display = 'flex';
+        week_form();
     }
    if(e.target.getAttribute('class') === 'add_week' ){
         document.querySelector('.popUpContainer').style.display = 'flex';
