@@ -14,15 +14,19 @@ body{
     --back:white;
     --color:black;
     margin: -.01%;
-    display: grid;
-    grid-template-rows: 15vh 75vh;
+    
+    
     font-family: 'Ubuntu', sans-serif;
     background-color: var(--back);
     color: var(--color);
     transition: 1s;
+    position: relative;
 }
 .header{
-   
+   position: fixed;
+   top:0;
+   width: 100vw;
+   height: 10vh;
    background-color: var(--top);
    display: flex;
    justify-content: space-between;
@@ -34,69 +38,86 @@ body{
     padding: 2%;
 }
 .material-symbols-rounded{
-    
+    cursor: pointer;
     font-size: 2.5rem;
 }
 .material-symbols-rounded:hover{
     font-weight: 900;
 }
-.sidebar.expand{
-    display: flex;
-}
+
 .sidebar{
-    
+    position: fixed;
     background-color: var(--side); 
-    display: none;
-    flex-direction: column;
-    padding: 3%;
-}
-.content{
     display: flex;
-    
-   
-}
-.sidebar>:nth-child(4){
+    bottom: 0;
     padding: 1%;
-    padding-top: 4%;
-    padding-bottom: 4%;
-    font-size: 1.4rem;
+    width: 100vw;
+    font-size: .7rem;
+    min-height: 8vh;  
 }
+.projects{
+    display: flex;
+    position: fixed;
+    top:10vh;
+    width: 100vw;
+    height: 9vh;
+    background-color: var(--side);
+}
+
+.material-symbols-rounded{
+    font-size: 1.7rem ;
+}
+.sidebar>div{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    margin-left: 6%;
+    margin-right: 6%;
+}
+
+
+
 .btn1{
     display: flex;
     justify-content: flex-start;
     border: none;
     padding: 1%;
     font-size: larger;
-    border-radius: 5px;
-    background-color: var(--side) ;
+    cursor: pointer;
+    background-color: rgba(0,0,0,.01) ;
     color: var(--color);
 }
-.active{
-    background-color: var(--hover);
-}
-
-
-.btn1:hover{
-    background-color: var(--hover);
-
-}
-.main{
-    display: grid;
-    grid-template-rows: 1fr 1fr;
+.sidebar>div{
+    border-radius: 5px;
     
-    flex-direction: column;
 }
+
+.active{
+    background-color: var(--side);
+}
+
+
+
 
 .content{
+    padding-top: 21vh;
+    display: flex;
+    flex-direction: column;
+    
+   padding-left: 7%;
     background-color: var(--back);
 }
 
 .mode{
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   
    position: fixed;
-   padding: 2px;
    right: 2%;
-   bottom: 2%;
-   background-color: var(--top);
+   cursor: pointer;
+   background-color: var(--side);
    color: var(--color);
    border-radius: 5px;
    transform: scale(1);
@@ -107,7 +128,8 @@ body{
 }
 .popUpContainer{
     position: fixed;
-    display: flex;
+    display: none;
+    inset: 0;
     justify-content: center;
     align-items: center;
     background-color: rgba(0, 0, 0, .5);
@@ -119,11 +141,12 @@ body{
     width: 70%;
     height: 60%;
     display: flex;
+    flex-direction: column;
     background-color: white;
     border-radius: 5px;
     position: relative;
 }
-.cancel{
+#cancel{
     color: var(--top);
     cursor: pointer;
     transition: 1s;
@@ -136,31 +159,122 @@ body{
     transform: scale(1.03);
     
 }
+/* --------------------------------------------content page--------------------------------------------------------------- */
+.home_header,.today_header,.week_header{
+    display: flex;
+    width: 90%;
+    height: 3%;
+    justify-content: space-between;
+    font-size: 1.3rem;
+    margin-bottom: 3%;
+    padding-bottom: 2.5%;
+    border-bottom: 1px solid var(--top);
+}
+.add_today,.add_week{
+    width: 90%;
+    height: 20%;
+    font-size: 1.2rem;
+    display: flex;
+    justify-content: center;
+    
+}
 
 @media(min-width: 600px){
-  .main{
-    grid-template-columns: 1fr 3fr;
-    grid-template-rows: 100vh;
-  } 
-  .sidebar{
-    display: flex;
+   html,body{
+    height: 100%;
+   }
+    body{
+        display: grid;
+        grid-template-rows: 1fr 8fr;
+        grid-template-columns: 1fr 3fr;
+        
+        position:initial;
+    }
+    .header>*{
+        padding: 1%;
+    }
+  .proj_list{
+     display: none;
+    }
+  .header{
+    font-size: 2.5rem;
+    font-weight: 900;
+    position: initial;
+    grid-row: 1/2;
+    grid-column: 1/3;
+    width: 100%;
+    height: 100%;
+    
   }
  .popUp{
     width: 40%;
     height: 50%;
  } 
-.sidebar>*{
-    margin: 3%;
-    font-size: 1.5rem;
+.projects{
+    display: none;
+}
+
+.sidebar{
+    padding-top: 4%;
+    position: relative;
+    flex-direction: column;
+    font-size: 1rem;
+    grid-row: 2/3;
+    grid-column: 1/2;
+    width: 100%;
+    min-height: 100%;
+    
+}
+.sidebar>div{
+    width: 80%;
+    margin-bottom: 4%;
+    flex-wrap:nowrap;
+    justify-content: flex-start;
+    
+}
+.sidebar>div:hover{
+    background-color: var(--hover);
     
 }
 
-.sidebar>:nth-child(4){font-size: 2rem;}
- .header{
-    font-weight: 1000;
- }
- .menu{
-    display: none;
- }
+
+.sidebar .material-symbols-rounded{
+    font-size: 2rem;
+    padding-top: .5%;
+}
+
+
+.active{
+    background-color: var(--hover);
+   
+}
+.content{
+    padding: 5%;
+    position: initial;
+    background-color: var(--back);
+    grid-row: 2/3;
+    grid-column: 2/3;
+   
+   
+   justify-content: flex-start;
+   align-items: flex-start;
+    
+}
+.mode .material-symbols-rounded{
+    font-size: 1.7rem;
+    
+}
+.mode{
+    padding: 0.5%;
+}
+.home_header,.today_header,.week_header{
+  width: 67vw;
+  padding-bottom: 1%;
+  
+}
+.add_today,.add_week{
+    width: 67vw;
+    padding-top: 3px;  
+}
 
 }

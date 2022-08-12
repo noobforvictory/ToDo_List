@@ -5,6 +5,10 @@ module.exports = {
     mode: 'development',
   entry:{
    index:  './src/index.js',
+   home: './src/home.js',
+   today: './src/today.js',
+   week: './src/week.js',
+   proj: './src/proj.js',
   },
   devtool: 'inline-source-map',
   devServer: {

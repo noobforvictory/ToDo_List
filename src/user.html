@@ -19,26 +19,35 @@
   <body>
     <div class="header">
       <div>To-Do</div>
-      <span class="material-symbols-rounded menu"> menu </span>
-    </div>
-    <div class="main">
-      <div class="sidebar">
-        <button class="btn1 active">Home</button>
-        <button class="btn1">Today</button>
-        <button class="btn1">Week</button>
-        <div>Projects</div>
-        <button class="btn1">+ Add Project</button>
-      </div>
-      <div class="content"></div>
       <div class="mode">
         <span class="material-symbols-rounded"> clear_night </span
         ><span class="material-symbols-rounded"> light_mode </span>
       </div>
     </div>
-    <div class="popUpContainer">
-      <div class="popUp">
-        <span class="material-symbols-rounded cancel"> cancel </span>
+
+    <div class="sidebar">
+      <div class="active menu" id="home">
+        <span class="material-symbols-rounded"> home </span>
+        <button class="btn1">Home</button>
       </div>
+      <div class="menu" id="today">
+        <span class="material-symbols-rounded"> today </span
+        ><button class="btn1">Today</button>
+      </div>
+      <div class="menu" id="week">
+        <span class="material-symbols-rounded"> date_range </span
+        ><button class="btn1">Week</button>
+      </div>
+
+      <button class="btn1">Projects</button>
+    </div>
+    <div class="proj_list"></div>
+
+    <div class="content"></div>
+
+    <div class="projects"></div>
+    <div class="popUpContainer">
+      <div class="popUp"></div>
     </div>
   </body>
 </html>
