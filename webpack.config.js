@@ -9,6 +9,7 @@ module.exports = {
    today: './src/today.js',
    week: './src/week.js',
    proj: './src/proj.js',
+   file: './src/file.js',
   },
   devtool: 'inline-source-map',
   devServer: {

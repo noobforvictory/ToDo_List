@@ -141,13 +141,40 @@ body{
     width: 70%;
     height: 60%;
     display: flex;
+    padding: 5%;
+    justify-content: center;
+    overflow: hidden;
     flex-direction: column;
     background-color: white;
     border-radius: 5px;
     position: relative;
+    background-color: var(--back);
+    color: var(--color);
+}
+.popUp>div{
+    display: flex;
+    flex-direction: column-reverse;
+}
+.popUp>button{
+    padding: 2%;
+    margin: 2%;
+    width: 100%;
+    font-size: 1rem;
+}
+input{
+    padding: 2%;
+    margin: 2%;
+    width: 95%;
+    font-size: 1rem;
+}
+textarea{
+    padding: 2%;
+    margin: 2%;
+    width: 95%;
+    font-size: 1rem;
 }
 #cancel{
-    color: var(--top);
+    color: coral;
     cursor: pointer;
     transition: 1s;
     transform: scale(1);
@@ -175,6 +202,7 @@ body{
     padding-bottom: 2.5%;
     border-bottom: 1px solid var(--top);
 }
+
 .add_today,.add_week{
     width: 90%;
     height: 20%;
@@ -183,6 +211,36 @@ body{
     justify-content: center;
     
 }
+.todo{
+    display: grid;
+    justify-content: center;
+    align-items: center;
+    grid-template-columns: 1fr 10fr  3fr 1fr 1fr;
+    border-bottom: 1px outset rgba(170, 166, 166,.2);
+    margin-bottom: 2%;
+    width: 90%;
+    position: relative;
+}
+.todo>.material-symbols-rounded{
+    font-size: 1.3rem;
+}
+.due_date{
+    color: red;
+    
+    
+}
+.checked::after{
+    position: absolute;
+    content: '';
+    background-color: red;
+    height: 1px;
+    width: 100%;
+}
+.checked{
+    opacity: .4;
+}
+
+
 
 @media(min-width: 600px){
    html,body{
@@ -223,7 +281,8 @@ body{
  .popUp{
     width: 40%;
     height: 50%;
- } 
+    
+ }
 .projects{
     display: none;
 }
@@ -293,5 +352,7 @@ body{
     width: 67vw;
     padding-top: 3px;  
 }
-
+.todo{
+    width: 99.8%;
+}
 }

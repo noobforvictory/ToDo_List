@@ -1,8 +1,8 @@
 import './style.css';
 import { home } from './home.js';
-import { today, today_form } from './today.js';
-import { week ,week_form} from './week.js';
-
+import { today, today_form,createToday } from './today.js';
+import { week ,week_form, createWeek} from './week.js';
+import { checkEmpty,cancel} from './file.js';
 
 home();
 document.querySelector('.mode').addEventListener('click',()=>{
@@ -41,14 +41,22 @@ document.addEventListener('click',(e)=>{
         document.querySelector('.popUpContainer').style.display = 'flex';
     }
     if(e.target.getAttribute('id')=== 'cancel'){
-        document.querySelector('.popUpContainer').style.display = 'none';
+        cancel();
+        
   
     }
-    if(e.target.getAttribute('id') === 'today_submit'){
-
-    }
+    
     if(e.target.getAttribute('id') === 'week_submit'){
-
+        if(checkEmpty()){
+        createWeek();
+        cancel();
+        }
+    }
+    if(e.target.getAttribute('id') === 'today_submit'){
+        if(checkEmpty()){
+            createToday();
+            cancel();
+            }
     }
 });
 
@@ -62,4 +70,26 @@ function makeActive(str){
         document.querySelector('#week').classList.add('active');
     }
    
+}
+document.querySelectorAll('.checkbox').forEach(box=>box.addEventListener('click',(e)=>{
+       e.target.parentElement.classList.toggle('checked');
+      let key = e.target.getAttribute('id');
+      changeTask(key);
+}));
+
+document.querySelectorAll('.delete').forEach(edit=>edit.addEventListener('click',(e)=>{
+    let key = e.target.parentElement.getAttribute('id');
+  localStorage.removeItem(key);
+  e.target.parentElement.remove();
+}));
+
+function changeTask(k){
+    let obj = JSON.parse(localStorage.getItem(localStorage.key(k)));
+    localStorage.removeItem(k);
+    if(obj.task === 'ND'){
+        obj.task = 'done';
+    }else{
+        obj.task = 'ND';
+    }
+    localStorage.setItem(obj.project_name,JSON.stringify(obj));
 }
