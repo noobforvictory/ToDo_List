@@ -23,16 +23,16 @@ module.exports = {
         
         template: './src/user.html',
         
-        title: 'ToDo',
+        title: 'Development',
 
     }),
 
   ],
   output: {
-    filename: '[name].[contenthash].js',
+    filename: '[name].bundle.js',
     path: path.resolve(__dirname, 'dist'),
-    publicPath: '/dist/',
-    caches:true,
+    clean: true,
+    
   },
   optimization: {
 
