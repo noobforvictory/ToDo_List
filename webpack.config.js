@@ -23,7 +23,7 @@ module.exports = {
         
         template: './src/user.html',
         
-        title: 'Caching',
+        title: 'ToDo',
 
     }),
 
@@ -32,7 +32,7 @@ module.exports = {
     filename: '[name].[contenthash].js',
     path: path.resolve(__dirname, 'dist'),
     publicPath: '/dist/',
-    clean: false,
+    
   },
   optimization: {
 
