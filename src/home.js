@@ -28,7 +28,7 @@ function displayHome(){
      
     const todo = document.createElement('div');
     todo.classList.add('todo');
-    todo.setAttribute('id',obj.title);
+    todo.setAttribute('id',obj.project_name);
     const check_box = document.createElement('input');
     check_box.setAttribute('type',"checkbox");
     check_box.classList.add('checkbox');

@@ -57,12 +57,15 @@ body{
     justify-content: space-around;
 }
 .projects{
-    display: flex;
+    display: none;
     position: fixed;
     top:10vh;
     width: 100vw;
     height: 9vh;
     background-color: var(--side);
+}
+.proj_list{
+    display: none;
 }
 
 .material-symbols-rounded{
