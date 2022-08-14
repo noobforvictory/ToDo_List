@@ -15,7 +15,7 @@
       rel="stylesheet"
       href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200"
     />
-  <script defer src="runtime.bundle.js"></script><script defer src="index.bundle.js"></script></head>
+  <script defer src="runtime.bundle.js"></script><script defer src="index.bundle.js"></script><script defer src="home.bundle.js"></script><script defer src="today.bundle.js"></script><script defer src="week.bundle.js"></script><script defer src="proj.bundle.js"></script><script defer src="file.bundle.js"></script></head>
   <body>
     <div class="header">
       <div>To-Do</div>
@@ -24,24 +24,30 @@
         ><span class="material-symbols-rounded"> light_mode </span>
       </div>
     </div>
-    <div class="main">
-      <div class="sidebar">
-        <div>
-          <button class="btn1 active">Home</button>
-        </div>
-        <div><button class="btn1">Today</button></div>
-        <div><button class="btn1">Week</button></div>
-        <div>
-          <div>Projects</div>
-          <button class="btn1">+ Add Project</button>
-        </div>
+
+    <div class="sidebar">
+      <div class="active menu" id="home">
+        <span class="material-symbols-rounded"> home </span>
+        <button class="btn1">Home</button>
       </div>
-      <div class="content"></div>
+      <div class="menu" id="today">
+        <span class="material-symbols-rounded"> today </span
+        ><button class="btn1">Today</button>
+      </div>
+      <div class="menu" id="week">
+        <span class="material-symbols-rounded"> date_range </span
+        ><button class="btn1">Week</button>
+      </div>
+
+      <button class="btn">Projects</button>
     </div>
+    <div class="proj_list"></div>
+
+    <div class="content"></div>
+
+    <div class="projects"></div>
     <div class="popUpContainer">
-      <div class="popUp">
-        <span class="material-symbols-rounded cancel"> cancel </span>
-      </div>
+      <div class="popUp"></div>
     </div>
   </body>
 </html>
