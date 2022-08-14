@@ -13,7 +13,7 @@ module.exports = {
   },
   devtool: 'inline-source-map',
   devServer: {
-    
+    watchContentBase: true,
     static: './dist',
 
   },
