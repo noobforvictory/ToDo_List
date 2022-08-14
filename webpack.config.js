@@ -23,7 +23,7 @@ module.exports = {
         
         template: './src/user.html',
         
-        title: 'ToDO list',
+        title: 'ToDo list',
 
     }),
 
