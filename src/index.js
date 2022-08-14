@@ -2,7 +2,7 @@ import './style.css';
 import { home } from './home.js';
 import { today, today_form,createToday } from './today.js';
 import { week ,week_form, createWeek} from './week.js';
-import { checkEmpty,cancel} from './file.js';
+import { checkEmptyWeek,checkEmptyToday,cancel} from './file.js';
 
 home();
 document.querySelector('.mode').addEventListener('click',()=>{
@@ -47,13 +47,13 @@ document.addEventListener('click',(e)=>{
     }
     
     if(e.target.getAttribute('id') === 'week_submit'){
-        if(checkEmpty()){
+        if(checkEmptyWeek()){
         createWeek();
         cancel();
         }
     }
     if(e.target.getAttribute('id') === 'today_submit'){
-        if(checkEmpty()){
+        if(checkEmptyToday()){
             createToday();
             cancel();
             }
