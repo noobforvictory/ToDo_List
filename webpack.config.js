@@ -13,7 +13,7 @@ module.exports = {
   },
   devtool: 'inline-source-map',
   devServer: {
-    watchContentBase: true,
+    
     static: './dist',
 
   },
@@ -32,7 +32,7 @@ module.exports = {
     filename: '[name].[contenthash].js',
     path: path.resolve(__dirname, 'dist'),
     publicPath: '/dist/',
-    clean: false,
+    clean: true,
   },
   optimization: {
 
