@@ -1,3 +1,5 @@
+import { projectList } from "./file.js";
+
 export function home(){
 const content = document.querySelector('.content');
 content.innerHTML = '';
@@ -19,6 +21,7 @@ home_page.append(home1,home2);
     home1.append(home_header);
 
     displayHome();
+    projectList();
 }
 
 function displayHome(){

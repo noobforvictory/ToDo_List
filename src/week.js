@@ -1,3 +1,4 @@
+import { projectList } from "./file.js";
 export function week(){
     const content = document.querySelector('.content');
     content.innerHTML = '';
@@ -21,6 +22,7 @@ export function week(){
     week_header.append(wh1,wh2);
     week1.append(week_header);
     displayWeek();
+    projectList();
 }
 
 

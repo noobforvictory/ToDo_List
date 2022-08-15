@@ -51,21 +51,44 @@ body{
     display: flex;
     bottom: 0;
     padding: 1%;
+    
     width: 100vw;
     font-size: .7rem;
     min-height: 8vh;  
     justify-content: space-around;
 }
-.projects{
-    display: none;
+
+.proj_list{
+    display: flex;
     position: fixed;
+    justify-content: flex-start;
+    
+    font-size: 1.2rem;
     top:10vh;
+    left: 0;
     width: 100vw;
     height: 9vh;
     background-color: var(--side);
+
+    
 }
-.proj_list{
-    display: none;
+
+.proj_list>div{
+    display: flex;
+    overflow: scroll;
+    width: fit-content;
+    border: 2px solid grey;
+    padding: 1%;
+    border-radius: 15px;
+    margin: 1%;
+}
+.proj_list>div>div+div{
+    margin-left: 15%;
+    background-color: var(--top);
+    width: 35px;
+    display: flex;
+    justify-content: center;
+    border-radius: 50%;
 }
 
 .material-symbols-rounded{
@@ -260,7 +283,34 @@ textarea{
         padding: 1%;
     }
   .proj_list{
+    margin-top: -20%;
+    height: fit-content;
+    position: relative;
      display: flex;
+     flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    font-size: 1.5rem;
+    }
+   
+    .proj_list>div{
+        display: flex;
+        border-style: none;
+        border-bottom: 1px solid grey;
+        justify-content: space-between;
+        width: 90%;
+        
+        margin: 2%;
+    }
+    
+    
+    .proj_list>div>:nth-child(2){
+        background-color: var(--top);
+        width: 30px;
+        border-radius: 50%;
+        display: flex;
+        justify-content: center;
+        margin-left: 0%;
     }
   .header{
     font-size: 2.5rem;
@@ -273,6 +323,7 @@ textarea{
     
   }
   .btn{
+    margin-top: 10%;
     display: flex;
     height: 10%;
     justify-content: flex-start;
@@ -286,9 +337,7 @@ textarea{
     height: 50%;
     
  }
-.projects{
-    display: none;
-}
+
 
 .sidebar{
     padding-top: 4%;
@@ -315,7 +364,9 @@ textarea{
     background-color: var(--hover);
     
 }
-
+.sidebar .proj_list:hover{
+ background-color: var(--side);
+}
 
 .sidebar .material-symbols-rounded{
     font-size: 2rem;
@@ -358,4 +409,12 @@ textarea{
 .todo{
     width: 99.8%;
 }
+}
+.proj_list>div:hover{
+   cursor: pointer;
+ background-color: var(--hover);
+}
+.projPage{
+    width: 100%;
+    overflow: auto;
 }

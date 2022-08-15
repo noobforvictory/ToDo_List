@@ -2,9 +2,10 @@ import './style.css';
 import { home } from './home.js';
 import { today, today_form,createToday } from './today.js';
 import { week ,week_form, createWeek} from './week.js';
-import { checkEmptyWeek,checkEmptyToday,cancel,editTodayForm,editWeekForm,editTaskToday, editTaskWeek } from './file.js';
+import { checkEmptyWeek,checkEmptyToday,cancel,editTodayForm,editWeekForm,editTaskToday, editTaskWeek,projectList,projPageRender } from './file.js';
 
 home();
+
 document.querySelector('.mode').addEventListener('click',()=>{
     document.body.classList.toggle('dark');
 });
@@ -47,12 +48,14 @@ document.addEventListener('click',(e)=>{
     if(e.target.getAttribute('id') === 'week_submit'){
         if(checkEmptyWeek()){
         createWeek();
+        projectList();
         cancel();
         }
     }
     if(e.target.getAttribute('id') === 'today_submit'){
         if(checkEmptyToday()){
             createToday();
+            projectList();
             cancel();
             }
     }
@@ -67,6 +70,7 @@ document.addEventListener('click',(e)=>{
         let key = e.target.parentElement.getAttribute('id');
          localStorage.removeItem(key);
          e.target.parentElement.remove();
+         projectList();
     }
 
     if(e.target.getAttribute('class') === 'material-symbols-rounded edit'){
@@ -83,13 +87,19 @@ document.addEventListener('click',(e)=>{
         if (obj.belong === 'today'){
             editTaskToday(key);console.log("out")
             today();
+            projectList();
             cancel();
             
         }else{
             editTaskWeek(key);
             week();
+            projectList();
             cancel();
     }
+    }
+
+    if(e.target.getAttribute('class') === 'projPage'){
+        projPageRender(e.target.parentElement.getAttribute('class'));
     }
 
 });

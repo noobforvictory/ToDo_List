@@ -1,3 +1,4 @@
+import { projectList } from "./file.js";
 export function today(){
     const content = document.querySelector('.content');
     content.innerHTML = '';
@@ -23,7 +24,7 @@ export function today(){
 
     today1.append(today_header);
     displayToday();
-    
+    projectList();
     
     }
 
