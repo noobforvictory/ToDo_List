@@ -165,8 +165,9 @@ body{
 }
 .popUp{
     width: 70%;
-    height: 80vh;
+    height: 60vh;
     display: flex;
+    
     overflow: scroll;
     padding: 5%;
     justify-content: center;
@@ -177,8 +178,8 @@ body{
     position: relative;
     background-color: var(--back);
     color: var(--color);
-    
 }
+
 .popUp>div{
     display: flex;
     flex-direction: column-reverse;
@@ -201,6 +202,7 @@ textarea{
     margin: 2%;
     width: 95%;
     font-size: 1rem;
+    min-height: 20px;
     
 }
 #cancel{
