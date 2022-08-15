@@ -165,7 +165,7 @@ body{
 }
 .popUp{
     width: 70%;
-    height: 60vh;
+    height: 60%;
     display: flex;
     
     overflow: scroll;
